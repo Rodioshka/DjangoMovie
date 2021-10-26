@@ -35,6 +35,7 @@ class Actor(models.Model):
     def get_absolute_url(self):
         return reverse('actor_detail', kwargs={'slug': self.name})
 
+
 class Genre(models.Model):
     """Жанры"""
     name = models.CharField("Имя", max_length=100)
@@ -108,7 +109,7 @@ class RatingStar(models.Model):
     value = models.SmallIntegerField("Значение", default=0)
 
     def __str__(self):
-        return self.value
+        return str(self.value)
 
     class Meta:
         verbose_name = "Звезда рейтинга"

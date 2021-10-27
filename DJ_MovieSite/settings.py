@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'movies',
     'ckeditor',
     'ckeditor_uploader',
+    'contact',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +62,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries':{
+                'custom_templatetag': 'contact.templatetags.contact_tags',
+            }
         },
     },
 ]

@@ -11,14 +11,15 @@
                             inherit; color: rgb(255, 255, 255); font-size: 40px; background-color: rgba(0, 0, 0, 0);">DjangoMovie</a></h1>
             </div>
 
-            <label for="drop" class="toggle">Menu</label>
+            <label for="drop" class="toggle">{% trans 'Меню' %}</label>
             <input type="checkbox" id="drop">
             <ul class="menu mt-2">
-                <li class="active"><a href="index.html">Главная</a></li>
+                <li class="active"><a href="{% url 'home' %}">{% trans 'Главная' %}</a></li>
                 <li>
                     <!-- First Tier Drop Down -->
-                    <label for="drop-2" class="toggle">Категории <span class="fa fa-angle-down" aria-hidden="true" ></span> </label>
-                    <a href="#">Категории <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                    <label for="drop-2" class="toggle">{% trans 'Категории' %} <span class="fa fa-angle-down" aria-hidden="true"
+                    ></span> </label>
+                    <a href="#">{% trans 'Категории' %} <span class="fa fa-angle-down" aria-hidden="true"></span></a>
                     <input type="checkbox" id="drop-2">
                     <ul>
                         {% get_categories as categories %}
@@ -35,9 +36,9 @@
 ">Выход</a>
                     {% else %}
                         <a href="{% url 'account_login' %}" style="color: rgb(255, 255, 255); font-weight: 700; text-transform:
-                uppercase;">Вход</a>
+                uppercase;">{% trans 'Вход' %}</a>
                         <a href="{% url 'account_signup' %}" style="color: rgb(255, 255, 255); font-weight: 700; text-transform:
-                uppercase;">Регистрация</a>
+                uppercase;">{% trans 'Регистрация' %}</a>
                     {% endif %}
                 </li>
                 <li>
@@ -65,8 +66,8 @@
 <!-- //header -->
 <!--/banner-->
 <div class="banner-info">
-    <p class="editContent" >лучший сайт на django 3</p>
-    <h3 class="mb-4 editContent">Все о кино</h3>
+    <p class="editContent" >{% trans 'лучший сайт на django 3' %}</p>
+    <h3 class="mb-4 editContent">{% trans 'Все о кино' %}</h3>
     <div class="ban-buttons">
 
 

@@ -22,6 +22,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'locale',
     'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -113,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'ru-ru'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
@@ -132,9 +133,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
 gettext = lambda s: s
 LANGUAGES = (
-    ('ru', gettext("Russia")),
-    ('en', gettext("English")),
+    ('ru', gettext('Russia')),
+    ('en', gettext('English')),
 )
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 

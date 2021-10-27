@@ -12,10 +12,11 @@ urlpatterns = [
 ]
 # Для перевода текстов
 urlpatterns += i18n_patterns(
+    path("", include("movies.urls")),
     path('accounts/', include('allauth.urls')),
     path('pages/', include('django.contrib.flatpages.urls')),
     path('contact/', include("contact.urls")),
-    path("", include("movies.urls")),
+
 )
 
 if settings.DEBUG:
